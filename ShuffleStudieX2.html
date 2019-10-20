@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+    <body>
+    <h1>Zufallsliste</h1>
+    <ol>
+      <script>
+	function shuffle(lliste)
+	{
+	    const leng=lliste.length;
+
+	    for (let i=leng-1;i>=0;i--)
+	    {
+		let zuf=Math.floor(Math.random()*(i+1));
+		let help=lliste[zuf];
+		lliste[zuf]=lliste[i];
+		lliste[i]=help;
+	    }
+	    return lliste;
+	}
+	var liste=[];
+	liste.push("<li><a href='https://forms.office.com/Pages/ResponsePage.aspx?id=p60NKtOktk6O7QkRfFpbCr4RaR7x73RDiyjfBNoC_LFUNkdTNjJUUlc3VjhNTENJV1VaNzJDWEtYUy4u'>Schnuppern im musischen Zweig</a></li>");
+	liste.push("<li><a href='https://forms.office.com/Pages/ResponsePage.aspx?id=p60NKtOktk6O7QkRfFpbCr4RaR7x73RDiyjfBNoC_LFUNTZDTzdHVjdENkswRTYzVTZSSEdWSVM3NS4u'>Schnuppern im Informatikzweig</a></li>");
+	liste.push("<li><a href='https://forms.office.com/Pages/ResponsePage.aspx?id=p60NKtOktk6O7QkRfFpbCr4RaR7x73RDiyjfBNoC_LFUME1LVVI2UDc0MVhEN0FBNjBNTDM0VEhVSC4u'>Schnuppern im naturwissenschaftlichen Zweig</a></li>");
+	liste.push("<li><a href='https://forms.office.com/Pages/ResponsePage.aspx?id=p60NKtOktk6O7QkRfFpbCr4RaR7x73RDiyjfBNoC_LFUMU9GNkszSzhNSkwzR0MyVVBOS0xHT1JHVy4u'>Schnuppern im Sportzweig</a></li>");
+
+
+		   
+ 
+	shuffle([0,1,2,3]).forEach(function (item)
+				   {
+				       document.write(liste[item]);
+				   });
+    </script>
+    </ol>
+  
+</body>
+
+</html>
