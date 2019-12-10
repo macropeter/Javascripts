@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+</head>
+
+<body>
+
+  <h1>Grafik in Javascript</h1>
+  <canvas id="MyCanvas" width="500" height="500">
+  </canvas>
+
+
+  <script>
+    const ctx=document.getElementById("MyCanvas");
+    const paint=ctx.getContext("2d");
+
+    
+    paint.fillStyle="grey";
+    paint.fillRect(0,0,500,500);
+
+    paint.arc(250,250,50,0,Math.PI*2);
+    paint.strokeStyle="green";
+
+    paint.fillStyle="green";
+    paint.fill();
+    paint.stroke();
+
+
+  </script>
+</body>
+
+</html>

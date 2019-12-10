@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    function Zufallszahl()
+    {
+	let r=document.getElementById("enter").value;
+	document.getElementById("Absatz2").innerHTML="Der Loser ist "+Math.floor(Math.random()*r+1);   
+  </script>
+
+
+  
+
+
+
+</head>
+
+<body>
+  <h1 id="testId">ZufallsschülerIn</h1>
+
+
+  <p id="Absatz2" ></p>
+  <input type="Text" id="enter">
+
+
+  <input type="button"
+	 value="Press!"
+	 onclick="Zufallszahl()">
+
+
+</body>
+
+</html>

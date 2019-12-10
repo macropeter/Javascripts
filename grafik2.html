@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+</head>
+
+<body>
+
+  <h1>Grafik in Javascript</h1>
+  <canvas id="MyCanvas" width="500" height="500">
+  </canvas>
+
+
+  <script>
+    const ctx=document.getElementById("MyCanvas");
+    const paint=ctx.getContext("2d");
+    paint.fillStyle="grey";
+    paint.fillRect(0,0,500,500);
+
+    for (let i=1;i<=10;i++)
+    {
+	let r=Math.floor(Math.random()*256);
+	let g=Math.floor(Math.random()*256);
+	let b=Math.floor(Math.random()*256);
+	let x=parseInt(Math.random()*300);
+	let y=parseInt(Math.random()*300);
+
+	
+	paint.fillStyle="RGBA("+r+","+g+","+b+",0.5)";
+	paint.fillRect(x,y,200,200);
+	paint.stroke();
+    }
+    
+
+
+  </script>
+</body>
+
+</html>
