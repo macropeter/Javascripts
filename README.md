@@ -17,7 +17,6 @@ Für die 1. Schularbeit 6ED!
 * [Schleife mit Liste](SchleifeListe.html)
 * [Schleife mit Tabelle](SchleifeTabelle.html)
 * [Schleife mit Absätzen](LoopAbsatz.html)
-* []()
 
 ## Ganz schön schwierig:
 * [Zahlen raten Spiel](Zahlenspiel0.html)
@@ -30,3 +29,4 @@ Für die 1. Schularbeit 6ED!
 
 ## Masterstufe
 * [Zahlenspiel - erweitert](Zahlenspiel2.html)
+* [Fizzbuzz - vollständig](fizzbuzz3.html)
