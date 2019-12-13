@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- 6. Klasse: Einsteiger -->
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {background-color:lightgreen;}
+  </style>
+
+
+  
+  <script>
+    function rechne(){
+	//vom User eingegebenen Wert abholen:
+	let a=document.getElementById("Eingabe1").value;
+	let b=document.getElementById("Eingabe2").value;
+	let c=document.getElementById("Eingabe3").value;
+
+
+	let diskr=b*b-4*a*c; //zuerst Diskriminante berechnen
+	if (diskr>=0)
+	{
+	    let loesung1=(-b + Math.sqrt(diskr))/(2*a);
+	    let loesung2=(-b - Math.sqrt(diskr))/(2*a);
+	    document.write("<p>1. Lösung:"+loesung1+"</p>");
+	    document.write("<p>2. Lösung:"+loesung2+"</p>");
+	}
+	else
+	{
+	    document.write("Keine Lösung!");
+	}
+    }
+  </script>
+
+
+
+</head>
+
+<body>
+  <h1>Der quadratische Gleichungslöser</h1>
+
+  <p>Gib a ein:
+    <input type="text"
+           id="Eingabe1">
+  </p>
+  
+  <p>Gib b ein:
+    <input type="text"
+	   id="Eingabe2">
+  </p>
+
+  <p>Gib c ein:
+    <input type="text"
+	   id="Eingabe3">
+  </p>
+  
+  <input type="button"
+	 onclick="rechne()"
+	 value="Rechne!">
+  
+ 
+</body>
+
+</html>

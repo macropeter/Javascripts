@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- 6. Klasse: Einsteiger Thema : Function if-Verzweigung -->
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <script language="javascript">
+
+    function passwort()
+    {
+      if(document.getElementById("pass").value == "1234")
+      {
+	location.href = "Willkomm.html";
+      }
+      else
+    {
+
+    alert("Das Passwort ist inkorrekt");
+    document.getElementById("pass").value="";
+
+      }
+    }
+
+</script>
+</head>
+
+<form name="pass">
+Passwort: <input type="text" id="pass" />
+<input type="button" value="ok" onclick="passwort()" />
+</form>
+<body>
+
+</body>
+</html>

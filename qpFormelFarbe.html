@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    function rechne()
+{
+    let p=document.getElementById("Eingabe1").value;
+    let q=document.getElementById("Eingabe2").value;
+    let diskr=p*p/4-q;
+    console.log(diskr);
+    if (diskr>=0)
+    {
+	let x1=-p/2+Math.sqrt(diskr);
+	let x2=-p/2-Math.sqrt(diskr);
+	document.body.style.backgroundColor="green";
+	document.getElementById("lsg").innerHTML="Die Lösungen sind: "+x1+" und "+x2;
+    }
+    else
+    {
+	document.body.style.backgroundColor="#abc";
+	document.getElementById("lsg").innerHTML="Keine Lösungen";
+    }
+}
+    
+
+  </script>
+
+  
+  
+  
+</head>
+
+<body>
+  <h1>Der quadratische Gleichungslöser</h1>
+
+  <p>Gib p ein:
+    <input type="text"
+           id="Eingabe1">
+  </p>
+  
+  <p>Gib q ein:
+    <input type="text"
+	   id="Eingabe2">
+  </p>
+  
+  <input type="button"
+	 onclick="rechne()"
+	 value="Rechne!">
+  
+ <p id="lsg"></p>
+</body>
+
+</html>
