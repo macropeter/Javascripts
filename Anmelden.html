@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    function weiter()
+    {
+	let nickname=document.getElementById("Eingabefeld").value;
+	document.write("<h1>Meine Webseite</h1>");
+	document.write("Willkommen, " + nickname +"!");
+	document.write("<a href='Quicktipp.html'> Hier gehts zu meiner Quicktippseite</a>");
+    }
+    
+  </script>
+   
+</head>
+
+<body>
+  <p>Gib deinen Namen ein:</p>
+  <input type="text" id="Eingabefeld"/>
+  <input type="button" value="Anmelden" onclick="weiter()"/>
+</body>
+
+</html>

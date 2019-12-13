@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <style>
+      body {background-color:grey;}
+      h1 {color: blue;}
+      td {background-color:lightblue;
+	  color:lightblue;
+	  font-size: 300%;
+	  width:100px;
+	  height:100px;
+	  text-align:center;
+	  }
+      td:hover {background-color:white;}
+
+    </style>
+    
+   
+</head>
+<body>
+  <h1>Quicktipp</h1>
+  <table border="black">
+    <tr>
+      <td id="Zeile1"></td>
+      <td>7</td>
+      <td>13</td>
+      <td>17</td>
+      <td>41</td>
+      <td>42</td>
+    </tr>
+    
+  </table>
+    <script type="text/javascript">
+    document.getElementById("Zeile1").innerHTML=parseInt(45*Math.random()+1);
+    </script>    
+  
+</body>
+
+</html>
