@@ -30,4 +30,4 @@ Für die 1. Schularbeit 6ED!
 
 ## Masterstufe
 * [Zahlenspiel - erweitert](Zahlenspiel2.html)
-* [Fizzbuzz - vollständig](fizzbuzz3.html)
+* [Fizzbuzz - vollständig](fizzbuzz3.html): Ein Klassiker: erzeuge ein Folge von natürlichen Zahlen 1..n (z.B. n=50) und ersetze jede durch 3 teilbare Zahl durch das Wort "fizz", jede durch 5 teilbare Zahl durch das Wort "buzz". Ist die Zahl durch 3 und durch 5 teilbar (also durch 15), ersetze die Zahl durch "fizzbuzz". In allen anderen Fällen soll die Zahl selbst dastehen. Kann man als Liste oder Tabelle machen, mit Schleife und if-Verzweigung. Teilbarkeit durch 3 schreibt man am besten als =`x%3==0)`, wobei % der Rest bei der Division ist. Alternativ kann man auch `(x/3==parseInt(x/3)` schreiben (also durch 3 dividieren und Kommastellen wegschneiden ist dasselbe Ergebnis wie durch 3 dividieren).
