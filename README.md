@@ -4,7 +4,7 @@ Für die 1. Schularbeit 6ED!
 
 ## Ganz einfach:
 * [Hallo Welt!](HalloWelt.html): Das traditionell erste Programm in einer Programmiersprache: Nach dem Starten meldet das Programm "Hallo Welt"
-* [Anmeldung mit Nickname](anmeldung2.html): Eine Webseite fragt dich zuerst nach deinem Namen und begrüßt dich dann.
+* [Anmeldung mit Nickname](Anmelden.html): Eine Webseite fragt dich zuerst nach deinem Namen und begrüßt dich dann.
 * [Aufschrift auf Button ändern](button.html)
 * [Farbe mit Button ändern](FarbeButton.html): Mit `document.body.style.backgroundColor="lightgreen";` lässt sich die Hintergrundfarbe der Seite einstellen. Schreibe ein Programm, das auf einer Seite (mit "Hallo bunte Welt") 3 Buttons zum Einstellen von verschiedenen Farben anbietet.
 * [Zufallszahl](Zufallszahl): Zufällige Katalognummer zwischen 1 und 16 anzeigen; Start mit Button
