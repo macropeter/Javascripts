@@ -21,8 +21,8 @@ Für die 1. Schularbeit 6ED!
 
 ## Ganz schön schwierig:
 * [Zahlen raten Spiel](Zahlenspiel0.html)
-* [pq-Formel](pqFormelFarbe.html)
-* [abc-Formel](abcFormel.html)
+* [pq-Formel](pqFormelFarbe.html): Programmiere eine Seite, die die pq-Formel für quadratische Gleichungen ausrechnet. Eingabe sind die zwei Zahlen p und q (in Textfeldern), Ausgabe: die Lösungen. Leider gibt es Gleichungen ohne Lösung, wir müssen deshalb zuerst die Diskriminante ausrechnen und daraus die Wurzel (`Math.sqrt` "Square Root") nur dann ziehen, wenn sie größer oder gleich 0 ist. Sonst versucht der Computer die Wurzel aus einer negativen Zahl zu rechnen und das Programm stürzt ab.
+* [abc-Formel](abcFormel.html): Wie mit pq-Formel, nur sind diesmal drei Eingabefelder für a, b und c. Die Formel muss man entsprechend anpassen und -- Achtung! -- Klammern setzen: wenn man nicht `.../(2*a)` schreibt, dividiert der Computer durch 2 und multipliziert alles mit a... (alternativ geht auch `.../2/a`)
 * [Doppelschleife](DoppelListe.html)
 * [Null/Eins-Liste](NullEins.html): Erstelle mit Hilfe von Javascript eine Seite, die eine Tabelle mit 50 Zufallszahlen erzeugt. Bei jeder Zufallszahl, die mit Math.random() erzeugt wurde, trägt man ein 0 ein, wenn die Zufallszahl kleiner als 0,5 ist, und eine 1, wenn sie größer ist. wir erhalten also eine Tabelle mit 50 Nullen oder Einsen.
 * [Ziegenproblem](Ziegenproblem.html): Auf dem Bildschirm sind 3 Buttons; beim Laden der Seite sucht der Computer eine Zufallszahl zwischen 1 und 3, d.h. einer der drei Buttons ist ein Glückstreffer. Der User klickt einen Button an und -- gewinnt oder verliert, eine Ziege oder ein Auto
