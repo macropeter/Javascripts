@@ -13,6 +13,7 @@ Für die 1. Schularbeit 6ED!
 * [Countdown mit Alerts](Countdown.html)
 * [Simple Passwortabfrage](passw0.html): Bevor die eigentliche Webseite startet soll eine Passwortabfrage erfolgen (das Passwort ist momentan immer "1234")
 * [Quicktipp](Quicktipp.html)
+* [Wertetabelle](WerteTaabH.html): Lass den Browser mit Javascript eine Wertetabelle der Funktion f(x)=x * x von 0 bis 10 in Form einer Tabelle erstellen
 * [Kleine Tabelle mit Namen](NameTabelle.html)
 * [Schleife mit Liste](SchleifeListe.html)
 * [Schleife mit Tabelle](SchleifeTabelle.html)
