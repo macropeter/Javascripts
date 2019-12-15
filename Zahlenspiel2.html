@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- 6. Klasse Fortgeschrittene: Thema: if-Verzweigung Zufallszahl Function -->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+      body {background-color:gray;}
+    </style>
+    
+    <script>
+    var zufallszahl=Math.floor(Math.random()*10)+1;
+var anzahl=3; //Anzahl der Rateversuche
+console.log(zufallszahl);
+
+    function check()
+{
+    let x=document.getElementById("Eingabe").value;
+    anzahl=anzahl-1;
+
+    if (x==zufallszahl)
+    {
+	document.getElementById("Ergebnis").innerHTML="Richtig!";
+    //document.body.style.backgroundColor="lightgreen";
+
+    }
+    else
+    {
+    document.getElementById("Ergebnis").innerHTML="Leider falsch";
+    
+    
+
+    }
+    if (anzahl==0)
+    {
+    document.getElementById("Ergebnis").innerHTML="Verloren!";
+    document.body.style.backgroundColor="red";
+    document.getElementById("Eingabe").disabled=true;
+    document.getElementById("Button").disabled=true;
+    }
+    else
+    {
+    document.getElementById("Versuche").innerHTML="Noch "+anzahl+ " Versuch(e)";
+    }
+    
+}
+
+  </script>
+</head>
+
+<body>
+  <h1>Versuche die Zahl zu erraten, sie liegt zwischen 1 und 10</h1>
+
+  <p>Gib hier deine Zahl ein:</p>
+
+  <p><input type="text" id="Eingabe" size="3"></p>
+
+  <p><input type="button" id="Button" onclick="check()" value="Los!"></p>
+
+  <p id="Ergebnis"></p>
+  <p id="Versuche">
+  </p>
+  
+ 
+
+</body>
+
+</html>
