@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- 6. Klasse Einsteiger: Thema: Function if-Verzweigung Zufallszahl -->
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <script>
+    var glueckszahl=Math.floor(Math.random()*3+1);
+    console.log(glueckszahl);
+    
+    function ziege1(){
+	if (glueckszahl==1)
+	{
+	    alert("Auto gewonnen!");
+	}
+	else
+	{
+	    alert("Ziege!!!");
+	}
+    } 
+
+    function ziege2(){
+	if (glueckszahl==2)
+	{
+	    alert("Auto gewonnen!");
+	}
+	else
+	{
+	    alert("Ziege!!!");
+	}
+    }
+
+    function ziege3(){
+	if (glueckszahl==3)
+	{
+	    alert("Auto gewonnen!");
+	}
+	else
+	{
+	    alert("Ziege!!!");
+	}
+    }
+  </script> 
+</head>
+<body>
+
+  <h1>Ziegenproblem</h1>
+  <p>Suche eine Türe aus, um den Hauptpreis zu gewinnen!</p>
+
+  <input type="button" value="Tür1" onclick="ziege1()">
+  <input type="button" value="Tür2" onclick="ziege2()">
+  <input type="button" value="Tür3" onclick="ziege3()">
+  
+
+
+
+  
+</body>
+
+</html>
