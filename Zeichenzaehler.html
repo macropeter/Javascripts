@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+    <script>
+    function wrapper()
+{
+    //console.log(zaehle());
+    var fs = require('fs');
+    fs.readFile('./test.txt', function (err, data) {
+	if (err) {
+	    throw err;
+	}
+	console.log(data);
+    });
+    
+}
+
+    function zaehle()
+{
+    var txt=document.getElementById("Textbereich").value;
+    return txt.length;
+};
+    
+  </script>
+</head>
+
+<body>
+  <h1>Zeichen zählen</h1>
+  <h2>gib in das Textfeld deinen LaTeX-Text ein:</h2>
+  
+  <form>
+    <textarea cols="50" rows="10" id="Textbereich">
+    </textarea>
+    <input type="button"
+	   id="rechne"
+	   onclick="wrapper()"
+	   value="Los!">
+  
+  </form> 
+
+</body>
+
+</html>
