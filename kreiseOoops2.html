@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+</head>
+
+<body>
+
+  <h1>Grafik in Javascript</h1>
+  <canvas id="MyCanvas" width="500" height="500">
+  </canvas>
+
+
+  <script>
+    const ctx=document.getElementById("MyCanvas");
+    const paint=ctx.getContext("2d");
+
+paint.cercle = function(x,y,radius,farbe)
+{   
+    this.beginPath();
+    this.arc(x,y,radius,0,Math.PI*2);
+    this.fillStyle=farbe;
+    this.fill();
+    this.stroke();
+    return true;
+}
+
+    
+    paint.fillStyle="grey";
+    paint.fillRect(0,0,500,500);
+
+    function kreise(){
+	let mx=parseInt(Math.random()*500);
+	let my=parseInt(Math.random()*500);
+
+    
+	let r=parseInt(Math.random()*256);
+	let g=parseInt(Math.random()*256);
+    let b=parseInt(Math.random()*256);
+    let f="rgba("+r+","+g+","+b+",0.5)";
+
+	paint.cercle(mx,my,50,f);
+
+
+	
+    }
+
+    function stopp(){
+	clearInterval(myVar);
+
+    }
+    
+    var myVar=window.setInterval(kreise,200);
+
+
+  </script>
+
+  <input type="button"
+	 value="Stopp!"
+	 onclick="stopp()">
+</body>
+
+</html>
