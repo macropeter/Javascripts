@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+      body {
+          width: 75%;
+          margin-left:auto;
+          margin-right:auto;
+          background-color: aqua;}
+  </style>
+
+  <script>
+var text1;
+function wrapper()
+{
+    text1=document.getElementById("Textbereich").value;
+    //console.log(zaehle(document.getElementById("Textbereich").value));
+    document.getElementById("Textbereich").value=trimCounter(text1);
+}
+
+
+function zaehle(texto)
+{
+    return texto.length;
+}
+
+
+function trimCounter(texto)
+{
+    let anfdoc=texto.search("\\begin{document}");
+    console.log(anfdoc);
+    let enddoc=texto.search("\\end{document}")-1;
+    console.log(enddoc);
+    return texto.slice(anfdoc,enddoc);
+}
+    
+function streiche(texto)
+{
+    return texto.replace(/\\item/g,"");
+}
+  </script>
+</head>
+
+<body>
+  <h1>Zeichen zählen</h1>
+  <h2>gib in das Textfeld deinen LaTeX-Text ein:</h2>
+  
+  <form>
+    <textarea cols="100"
+    rows="10"
+    id="Textbereich">
+    </textarea>
+
+    <input type="button"
+	   id="rechne"
+	   onclick="wrapper()";
+	   value="Los!">
+  
+  </form> 
+
+  <p id="Ausgabe"></p>
+
+</body>
+
+</html>
