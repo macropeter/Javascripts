@@ -17,7 +17,7 @@ function wrapper()
 {
     text1=document.getElementById("Textbereich").value;
     //console.log(zaehle(document.getElementById("Textbereich").value));
-    document.getElementById("Textbereich").value=trimCounter(text1);
+    document.getElementById("Textbereich").value=streiche(trimCounter(text1));
 }
 
 
@@ -29,16 +29,16 @@ function zaehle(texto)
 
 function trimCounter(texto)
 {
-    let anfdoc=texto.search("\\begin{document}");
+    let anfdoc=texto.search("begin{document}");
     console.log(anfdoc);
-    let enddoc=texto.search("\\end{document}")-1;
+    let enddoc=texto.search("end{document}")-1;
     console.log(enddoc);
-    return texto.slice(anfdoc,enddoc);
+    return texto.slice(anfdoc+16,enddoc);
 }
     
 function streiche(texto)
 {
-    return texto.replace(/\\item/g,"");
+    return texto.replace(/\\item|\\begin\{[a-z]*\}|\\end\{[a-z]*\}|\\section/g,"");
 }
   </script>
 </head>
