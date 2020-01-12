@@ -51,7 +51,7 @@ function clAbbildungen(texto)
 function clBefehle(texto)
 //LaTeX-Befehle filtern
 {
-    return texto.replace(/\\maketitle|\\item|\\section|\\subsection|\\glqq|\\grqq|\\footnote|\\cite|\\tableofcontents|\\newpage|\\bibliographystyle|\\bibliography/g,"");
+    return texto.replace(/\\maketitle|\\item|\\section|\\subsection|\\glqq|\\grqq|\\footnote|\\cite\{.*\}|\\tableofcontents|\\newpage|\\bibliographystyle|\\bibliography/g,"");
 }
 
 function clKlammern(texto)
@@ -60,12 +60,14 @@ function clKlammern(texto)
     return texto.replace(/\{|\}/g,"");
 }
 
+
 const compose = (...fns) =>
   fns.reduceRight((prevFn, nextFn) =>
     (...args) => nextFn(prevFn(...args)),
     value => value
-  );
+  ); // ist nicht von mir! Habe ich von Jamie Mason auf Github: https://gist.github.com/JamieMason/172460a36a0eaef24233e6edb2706f83
 
+//Aber ich nütze das jetzt aus:
 const AlleFilter= compose(
     clKlammern,
     clBefehle,
