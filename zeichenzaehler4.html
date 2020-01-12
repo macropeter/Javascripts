@@ -31,20 +31,21 @@ function trimDocument(texto)
 }
 
 function clKommentare(texto)
+//Kommentare filtern    
 {
   return texto.replace(/[%].*\n|[%].*\n\r/g,""); //von %-Zeichen bis Zeilenende
 }
 
 function clUmgebungen(texto)
-//Umgebungen (itemize,enumerate) filtern
+//Umgebungen (itemize,enumerate,... ) filtern
 {
   return texto.replace(/\\begin\{.*\}|\\end\{.*\}/g,"");
 } 
 
-function clAbbildungen(texto)
-//Abbildungen (itemize,enumerate) filtern
+function clAbbildungen(texto)           
+//Abbildungen filtern
 {
-  return texto.replace(/\\begin\{figure}.*\\end\{figure}/g,"");
+  return texto.replace(/\\begin\{figure}.*\\end\{figure\}/g,"");
 } 
 
 function clBefehle(texto)
