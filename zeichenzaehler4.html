@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+      body {
+          width: 75%;
+          margin-left:auto;
+          margin-right:auto;
+          background-color: aqua;}
+  </style>
+
+  <script>
+
+
+function zaehle(texto)
+{
+    return texto.length;
+}
+
+
+function trimDocument(texto)
+//Bereiche vor \begin{document} und nach \end{document} wegschneiden (slice)
+{
+    let anfdoc=texto.search("begin{document}");
+    //console.log(anfdoc);
+    let enddoc=texto.search("end{document}")-1;
+    //console.log(enddoc);
+    return texto.slice(anfdoc+16,enddoc);
+}
+
+function clKommentare(texto)
+{
+  return texto.replace(/[%].*\n|[%].*\n\r/g,""); //von %-Zeichen bis Zeilenende
+}
+
+function clUmgebungen(texto)
+//Umgebungen (itemize,enumerate) filtern
+{
+  return texto.replace(/\\begin\{.*\}|\\end\{.*\}/g,"");
+} 
+
+function clAbbildungen(texto)
+//Abbildungen (itemize,enumerate) filtern
+{
+  return texto.replace(/\\begin\{figure}.*\\end\{figure}/g,"");
+} 
+
+function clBefehle(texto)
+//LaTeX-Befehle filtern
+{
+    return texto.replace(/\\maketitle|\\item|\\section|\\subsection|\\glqq|\\grqq|\\footnote|\\cite|\\tableofcontents|\\newpage|\\bibliographystyle|\\bibliography/g,"");
+}
+
+function clKlammern(texto)
+//Herumstehende Klammern filtern
+{
+    return texto.replace(/\{|\}/g,"");
+}
+
+const compose = (...fns) =>
+  fns.reduceRight((prevFn, nextFn) =>
+    (...args) => nextFn(prevFn(...args)),
+    value => value
+  );
+
+const AlleFilter= compose(
+    clKlammern,
+    clBefehle,
+    clUmgebungen,
+    clAbbildungen,
+    clKommentare,
+    trimDocument)
+
+
+function wrapper()
+{
+    let text1=document.getElementById("Textbereich").value;
+    console.log(text1.length); //Länge der originalen Source-Datei
+
+    text1=AlleFilter(text1); //Steuerbefehle, Kommentare etc herausfiltern
+    
+    document.getElementById("Textbereich").value=text1; //Text zur Kontrolle einblenden
+    document.getElementById("Ausgabe").innerHTML="Zeichenzahl ungefähr "+text1.length;
+}
+
+
+  </script>
+</head>
+
+<body>
+  <h1>Zeichen zählen</h1>
+  <h2>Kopiere deinen LaTeX-Text in das Textfeld:</h2>
+  
+    <form>
+    <p>
+    <textarea cols="100"
+    rows="10"
+    id="Textbereich">
+    </textarea>
+    </p>
+    <p>
+    <input type="button"
+	   id="rechne"
+	   onclick="wrapper()";
+value="Los!">
+    </p>
+  
+  </form> 
+
+  <p id="Ausgabe"></p>
+
+</body>
+
+</html>
