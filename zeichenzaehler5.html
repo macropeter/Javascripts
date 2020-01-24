@@ -61,9 +61,9 @@ function clQuotes(texto)
 }
 
 function clKlammern(texto)
-//Herumstehende Klammern filtern
+//Herumstehende Klammern und mehrfache Leerzeichenfiltern
 {
-    return texto.replace(/\{|\}/g,"");
+    return texto.replace(/\{|\}|[ ][ ]+/g,"");
 }
 
 
