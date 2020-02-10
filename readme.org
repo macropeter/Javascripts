@@ -17,8 +17,25 @@ Achtung: Skripte mit Grafik dürfen immer erst nach dem =<canvas>...</canvas>=-B
 
 Bilschirmschoner mit bunten Kreisen:
 - [[file:kreise.html][Version mit Schleife]] (viel zu schnell)
-- [[file:kreise2.html][Version mit setinterval]]
+- [[file:kreise2.html][Version mit setInterval]]
 
 Für Fortgeschrittene:
-- [[file:kreise1.html][Version mit Callbackfunktion beim Aufruf von setinterval]]
+- [[file:kreise1.html][Version mit Callbackfunktion beim Aufruf von setInterval]]
 - [[file:kreiseOoops.html][Objekt-orientierte Version]] (mit neuer Methode für paint-Objekt)
+
+* Monte-Carlo-Methode
+
+- [[file:MC1.html][Grundversion: Fläche unter der sin-Kurve]] (ohne Grafik)
+- [[file:MC_Kreis.html][Fläche unter Viertelkreis]]: mit graphischer Darstellung
+- [[file:MC_sinus.html][Fläche unter sin-Kurve (erstes Viertel)]] mit graphischer Darstellung
+
+* Pseudozufallsgenerator
+Von-Neumann-Generator
+
+- [[file:neumanngen.html][Startzahl zum Eingeben]] (vierstellig, Ausgabe über document.write)
+- [[file:neumanngen2.html][Startzahl zum Eingeben]] (vierstellig, Ausgabe über Konsole)
+- [[file:neumanngen3.html][Startzahl mit Datum]]
+- [[file:neumanngen6.html][Startzahl mit Datum, 6-stellig]]
+
+für Fortgeschrittene: Version ohne globale Variable, statt dessen mit einer Closure:
+- [[file:neumanngen7.html][Version mit Closure]]
