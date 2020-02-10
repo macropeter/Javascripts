@@ -1,0 +1,18 @@
+#+TITLE: Readme Informatik 8D
+#+AUTHOR: Peter Ostertag
+#+DATE: Schuljahr 2019/20
+#+LANGUAGE: de
+#+OPTIONS: ':t
+#+OPTIONS: toc:nil num:0
+#+STARTUP: inlineimages
+
+
+* JS-Programm-Guide für die 8D
+
+** Grafik überhaupt: Canvas
+
+Achtung: Skripte mit Grafik, dürfen immer erst nach dem =<canvas>...</canvas>=-Block stehen, also insbesondere nicht im =<head>=, sonst findet JS die Grafik nicht, weil sie erst nachher eingerichtet wird.
+
+- [[file:grafik1.html][Ein Rechteck]]
+- [[file:grafik2.html][Bunte Zufallsquadrate]]
+- [[grafik3.html][Ein Kreis]]
