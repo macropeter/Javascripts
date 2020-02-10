@@ -1,4 +1,4 @@
-#+TITLE: Readme Informatik 8D
+#+TITLE: JS-Programm-Guide für die 8D
 #+AUTHOR: Peter Ostertag
 #+DATE: Schuljahr 2019/20
 #+LANGUAGE: de
@@ -7,12 +7,18 @@
 #+STARTUP: inlineimages
 
 
-* JS-Programm-Guide für die 8D
+* Grafik überhaupt: Canvas
 
-** Grafik überhaupt: Canvas
-
-Achtung: Skripte mit Grafik, dürfen immer erst nach dem =<canvas>...</canvas>=-Block stehen, also insbesondere nicht im =<head>=, sonst findet JS die Grafik nicht, weil sie erst nachher eingerichtet wird.
+Achtung: Skripte mit Grafik dürfen immer erst nach dem =<canvas>...</canvas>=-Block stehen, also insbesondere nicht im =<head>=, sonst findet JS die Grafik nicht, weil sie erst nachher eingerichtet wird.
 
 - [[file:grafik1.html][Ein Rechteck]]
 - [[file:grafik2.html][Bunte Zufallsquadrate]]
 - [[grafik3.html][Ein Kreis]]
+
+Bilschirmschoner mit bunten Kreisen:
+- [[file:kreise.html][Version mit Schleife]] (viel zu schnell)
+- [[file:kreise2.html][Version mit setinterval]]
+
+Für Fortgeschrittene:
+- [[file:kreise1.html][Version mit Callbackfunktion beim Aufruf von setinterval]]
+- [[file:kreiseOoops.html][Objekt-orientierte Version]] (mit neuer Methode für paint-Objekt)
