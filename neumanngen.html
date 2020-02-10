@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+</head>
+
+<body>
+
+  <h1>Von-Neumann Pseudozufallszahlen</h1>
+  <h2>Ihre Zufallszahlen sind:</h2>
+  
+
+
+  <script>
+    var x=prompt("Gib eine Startzahl ein:");
+    
+    for (let i=1;i<=100;i++)
+    {
+        x=x*x;
+        x=parseInt(x/100); //durch 100, Komma streichen
+        x=x % 10000; //Rest beim Dividieren durch 10000
+        document.write("<p>"+x+"</p>");
+    }
+  </script>
+</body>
+
+</html>

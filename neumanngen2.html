@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+</head>
+
+<body>
+
+  <h1>Von-Neumann Pseudozufallszahlen</h1>
+  <h2>Ihre Zufallszahlen sind:</h2>
+  
+
+
+  <script>
+    var eingabe=prompt("Gib eine Startzahl ein:");
+
+    function myrandom(x)
+    {
+	x=x*x;
+	x=parseInt(x/100);
+	x=x % 10000;
+	return x;
+    }
+
+    console.log(myrandom(eingabe));
+  </script>
+</body>
+
+</html>

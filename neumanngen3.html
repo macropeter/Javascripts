@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+</head>
+
+<body>
+
+  <h1>Von-Neumann Pseudozufallszahlen</h1>
+  <h2>Ihre Zufallszahlen sind:</h2>
+  
+
+
+  <script>
+    var d=new Date(); //Datum/Uhrzeit holen
+    var x=d.getTime() % 10000; //Startzahl!
+    
+
+    function myrandom()
+    {
+	x=x*x;
+	x=parseInt(x/100);
+	x=x % 10000;
+	return x;
+    }
+
+    console.log(myrandom());
+  </script>
+</body>
+
+</html>
