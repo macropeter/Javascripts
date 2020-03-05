@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <meta charset="utf8"></meta>
+<title>Sierpinski</title>
+</head>
+<body>
+    <h1>Sierpinski-Dreieck</h1>
+
+<canvas id="mycanvas" height="800" width="800"></canvas>
+
+<script>
+  const c=document.getElementById("mycanvas");
+  const ctx=c.getContext("2d");
+  ctx.fillStyle="grey";
+  ctx.fillRect(0,0,800,800);
+
+  function startsierpi(){
+      const p1x=400,p1y=100;//Spitze des Dreiecks
+      const p2x=100,p2y=700;//Dreieck, links unten
+      const p3x=700,p3y=700;//Dreieck, rechts unten
+
+	ctx.fillStyle="black";
+      ctx.fillRect(p1x,p1y,2,2);
+      ctx.fillRect(p2x,p2y,2,2);
+      ctx.fillRect(p3x,p3y,2,2);
+      ctx.stroke();
+
+      var px=0,py=0; // Startpunkt
+      
+      for (let i=0;i<100000;i++) //Iteration
+      {
+	  let zf=parseInt(Math.random()*3); // 0 oder 1 oder 2
+	  if (zf==0)
+	  {
+	      //Mitte zwischen P und P1:
+	      px=(px+p1x)/2;
+	      py=(py+p1y)/2;
+	  }
+	  else if (zf==1)
+	  {
+	      //Mitte zwischen P und P2:
+	      px=(px+p2x)/2;
+	      py=(py+p2y)/2;
+	  }
+	  else
+	  {
+	      //Mitte zwischen P und P3:
+	      px=(px+p3x)/2;
+	      py=(py+p3y)/2;
+	  }
+	  ctx.fillRect(px,py,2,2);
+	  ctx.stroke();
+	  
+      }
+      
+
+  }
+  
+</script>
+
+<input type="button" value="Los!" onclick="startsierpi()"> 
+</body>
+</html>
