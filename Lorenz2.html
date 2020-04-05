@@ -18,14 +18,18 @@
 
     <script>
 
-var a=10;
-var b=28;
-var c=8/3.0;
-var dt=0.01;
+//Idee nach Coding Train: https://youtu.be/f0lkz2gSsIk
 
-    var x=0.01;
-    var y=0;
-    var z=0;
+//Konstanten (nach Wikipedia)
+const a=10;
+const b=28;
+const c=8/3.0;
+const dt=0.01;
+
+//Punkt:
+var x=0.01;
+var y=0;
+var z=0;
 
 
 function setup()
@@ -39,16 +43,16 @@ function trafoLine(x1,y1,x2,y2)
 {
     let mx=width/2;
     let my=height/2;
-    let fak=10;
+    let fak=10;//Vergrößerungsfaktor
 
-    line(x1*fak+mx,y1*fak+my,x2*fak+mx,y2*fak+my)
+    line(x1*fak+mx,y1*fak+my,x2*fak+mx,y2*fak+my);
     return true;
-
     
 }
 
 function draw()
 {
+    //Diffgleichungen (Wikipedia)
 
     let dx=(a*(y-x))*dt;
     let dy=(x*(b-z)-y)*dt;
@@ -56,6 +60,7 @@ function draw()
 
     stroke(255);
 
+    //Leider nur 2D:
     trafoLine(x,y,x+dx,y+dy);
 
     x=x+dx;
