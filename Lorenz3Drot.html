@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+    </title>
+    <style>
+      td { border:2px solid black;}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+
+    
+  </head>
+  
+<body>
+<h1>Test 3D</h1>
+
+
+
+    <script>
+
+//Idee nach Coding Train: https://youtu.be/f0lkz2gSsIk
+
+//Konstanten (nach Wikipedia)
+const a=10;
+const b=28;
+const c=8/3.0;
+const dt=0.01;
+const fak=5;//Vergrößerungsfaktor
+      
+//Punkt:
+var x=0.01;
+var y=0;
+var z=0;
+
+function setup()
+{
+    createCanvas(800,800,WEBGL);
+    background(0);
+    schiebe=createSlider(10, 400, 200);
+    schiebe.position(10,90);
+}
+
+      function draw(){
+	  let dx=(a*(y-x))*dt;
+	  let dy=(x*(b-z)-y)*dt;
+	  let dz=(x*y-c*z)*dt;
+
+	  let x1=x+dx;
+	  let y1=y+dy;
+	  let z1=z+dz;
+
+	  camera(0,schiebe.value()*10, 800, 0, 0, 0,0,1,0);
+
+	  stroke(255);
+	  //strokeWeight(3);
+	  
+	  beginShape(LINES);
+	      vertex(x*fak,y*fak,z*fak);
+	      vertex((x+dx)*fak,(y+dy)*fak,(z+dz)*fak);
+	  endShape();
+
+
+	  x=x1;
+	  y=y1;
+	  z=z1;
+
+	  console.log(x,y,z);
+
+}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+    </title>
+    <style>
+      td { border:2px solid black;}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+  </head>
+  
+<body>
+<h1>Lorenz Attraktor</h1>
+
+
+
+    <script>
+
+var a=10;
+var b=28;
+var c=8/3.0;
+var dt=0.01;
+
+    var x=0.01;
+    var y=0;
+    var z=0;
+
+
+function setup()
+{
+    createCanvas(800,800);
+    background(0);
+}
+
+
+function draw()
+{
+
+    let dx=(a*(y-x))*dt;
+    let dy=(x*(b-z)-y)*dt;
+    let dz=(x*y-c*z)*dt;
+
+    stroke(255)
+
+    
+    line(400+x,400+y,400+x+dx,400+y+dy);
+    //box(20);
+    x=x+dx;
+    y=y+dy;
+    z=z+dz;
+
+    console.log(x,y,z);
+
+}
+</script>
+
+
+</body>
+</html>
