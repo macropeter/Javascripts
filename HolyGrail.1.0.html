@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+
+    
+    #container {
+	display: grid;
+	grid-template-areas:
+	    "topbar topbar topbar"
+		"sidebar content ads"
+		"footer footer footer";
+	grid-template-columns: 1fr 3fr 1fr;
+	grid-template-rows:10% auto 10%;
+	
+	
+	grid-auto-rows: minmax(50px,auto);
+	
+    }
+
+    header {grid-area: topbar;
+	    background-color:gray;
+	    padding:5%;}
+    aside {grid-area: ads;
+	   background-color:yellow;
+	  padding:5%;}
+     main {grid-area: content;
+	   background-color: lightgray;
+	   padding:5%;}
+     nav {grid-area:sidebar;
+	  background-color:aquamarine;
+	  padding:5%;}
+     footer {grid-area:footer;
+	     background-color:sandybrown;
+	     padding:5%;}
+     section {margin-bottom: 5em;}
+     section > p {font-size:200%;}
+	 
+  </style>
+
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>Einkehr</h1>
+      <h2>von Ludwig Uhland</h2>
+
+  
+  </header>
+
+<main>
+  <section>
+<p>Bei einem Wirte wundermild,</p>
+<p>da war ich jüngst zu Gaste,</p>
+<p>ein gold’ner Apfel war sein Schild</p>
+<p>an einem langen Aste.</p>
+</section>
+
+<section>
+<p>Es war der gute Apfelbaum,</p>
+<p>bei dem ich eingekehret;</p>
+<p>mit süßer Kost und frischem Schaum</p>
+<p>hat er mich wohl genähret.</p>
+</section>
+
+<section>
+<p>Es kamen in sein grünes Haus</p>
+<p>viel leicht beschwingte Gäste,</p>
+<p>sie sprangen frei und hielten Schmaus</p>
+<p>und sangen auf das Beste.</p>
+</section>
+
+<section>
+<p>Ich fand ein Bett zu süßer Ruh</p>
+<p>auf weichen, grünen Matten.</p>
+<p>Der Wirt, der deckte selbst mich zu</p>
+<p>mit seinem kühlen Schatten.</p>
+</section>
+
+<section>
+<p>Nun fragt‘ ich nach der Schuldigkeit,</p>
+<p>da schüttelt er den Wipfel.</p>
+<p>Gesegnet sei er allezeit</p>
+<p>von der Wurzel bis zum Gipfel.</p>
+</section>
+
+</main>
+
+
+<nav>
+  <h2>Links</h2>
+  <ul>
+    <li><a href="https://www.deutschelyrik.de/einkehr.html">
+	deutschelyrik.de</a></li>
+    <li><a href="https://www.koelner-leselust.de/gedicht-zum-tag-bei-einem-wirte-wundermild-von-ludwig-uhland/">Kölner Leselust</a>
+    </li>
+    
+  </nav>
+
+  <aside>
+    <p>Hier könnte ihre Werbung stehen!</p>
+  </aside>
+  
+
+  <footer>
+    <p>Für den Inhalt verantwortlich: Ludwig Uhland und H.-P. Ostertag</p>
+  </footer>
+
+  </div>
+
+</body>
+
+</html>
