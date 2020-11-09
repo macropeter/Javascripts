@@ -40,33 +40,44 @@
 }
   </style>
   <script>
-      function Oeffnen(z){
-          document.getElementById("Kast"+z).setAttribute("src","Bilder/Bild1.png");
+    var tag1=new Date(2020,10,8,0,0,0,0);//Monate beginnen bei 0!
+    var tag2=new Date(2020,10,10,0,0,0,0);
+    
+      function Oeffnen1(){
+        let jetzt=new Date();
+        if (jetzt>tag1)
+          document.getElementById("Kastl1").setAttribute("src","Bilder/Bild1.png");
+      }
 
+      function Oeffnen2(){
+        let jetzt=new Date();
+        if (jetzt>tag2)
+          document.getElementById("Kastl2").setAttribute("src","Bilder/Bild2.png");
       }
   </script>
 </head>
 
 <body>
     <header><h1>Der BORG Adventkalender!</h1></header>
-  <main class="basic-grid">
-<div class="card">
-  <img id="Kast1" src="Bilder/Zahl1.jpg" onclick="Oeffnen(1);"/>
-</div>
-<div class="card">
-  2
-</div>
-<div class="card">
-  3
-</div>
-<div class="card">
-  4
-</div>
-<div class="card">
-  5
-</div>
-<div class="card">
-  6
+    <main class="basic-grid">
+      <div class="card">
+	<img id="Kastl1" src="Bilder/Zahl1.jpg" onclick="Oeffnen1();"/>
+      </div>
+	<div class="card">
+    <img id="Kastl2" src="Bilder/Zahl2.png" onclick="Oeffnen2();"/>
+	  
+	</div>
+	<div class="card">
+	  3
+	</div>
+	<div class="card">
+	  4
+	</div>
+	<div class="card">
+	  5
+	</div>
+	<div class="card">
+	  6
 </main>
 
 </body>
