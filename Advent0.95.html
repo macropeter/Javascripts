@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+    background: rgb(19, 19, 19);
+    color: #fff;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #353535;
+    font-size: 3rem;
+    color: #fff;
+    height: 200px;
+    width: 100%;
+    border-radius: 4px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+ }
+  
+.card:hover {
+    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+    transform: translateY(-3px) scale(1.1);
+ }
+    
+
+    .basic-grid {
+	display:grid;
+	gap: 1rem;
+	grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+}
+  </style>
+  <script>
+
+//Globale Variable: Memes      
+      var meme=new Array("Bilder/meme02.jpeg",
+      "Bilder/Meme0n.jpg",
+      "Bilder/Meme.advent.jpg",
+      "Bilder/StarWarsDisturbing.jpg");
+
+//Cookie Functions
+    function getCookie(cname) {
+      var name = cname + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+      for(var i = 0; i <ca.length; i++) {
+	var c = ca[i];
+	while (c.charAt(0) == ' ') {
+	  c = c.substring(1);
+	}
+	if (c.indexOf(name) == 0) {
+	  return c.substring(name.length, c.length);
+	}
+      }
+      return "";
+}
+    
+
+    function anfang()
+    {
+	for (let i=0;i<24;i++)
+	{
+	    if (getCookie("Kastl"+i)=="1")
+	    document
+	    .getElementById("Kastl"+i)
+		.setAttribute("src",meme[i]);
+	}
+    }
+    
+//Kästchen öffnen:     
+      function Oeffnen(x){
+        var jetzt=new Date();
+        var datum=new Date(2020,10,25,0,0,0);
+        if (jetzt>datum){
+            document
+		.getElementById("Kastl"+x)
+		.setAttribute("src",meme[x]);
+	    document.cookie="Kastl"+x+"=1;expires=Sat, 01 Jan 2021 00:00:00 UTC;SameSite=None; Secure";
+        }
+        else {
+            alert("Das geht heute nicht!");
+        }
+      }
+
+      
+  </script>
+</head>
+
+<body onload="anfang()">
+    <header>
+      <h1>Der BORG Adventkalender!</h1>
+    </header>
+    <main class="basic-grid">
+      <div class="card">
+	<img id="Kastl0"
+	     src="Bilder/Zahl01.png"
+         onclick="Oeffnen(0);"
+         width="200px"
+         height="200px"/>
+      </div>
+	<div class="card">
+	  <img id="Kastl1"
+	       src="Bilder/Zahl02.png"
+           onclick="Oeffnen(1);"
+           width="200px"
+           height="200px"/>
+	  
+	</div>
+		<div class="card">
+	  <img id="Kastl2"
+	       src="Bilder/Advent3.png"
+           onclick="Oeffnen(2);"
+           width="200px"
+           height="200px"/>
+	  
+		</div>
+			<div class="card">
+	  <img id="Kastl3"
+	       src="Bilder/Zahl4.PNG"
+           onclick="Oeffnen(3);"
+           width="200px"
+           height="200px"/>
+	  
+	</div>
+	
+</main>
+
+</body>
+
+</html>
