@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    function bobo()
+    {
+	var tst = document.getElementById("Textbereich").value;
+	var atst= tst.split('\n');
+	atst.forEach((item,index,arr)=>arr[index]=item.split('\t')[0]);
+	return atst.filter((item,index)=>atst.indexOf(item)===index).sort();
+    }
+
+  </script>
+</head>
+
+<body>
+  <h1>Zeichen zählen</h1>
+
+  
+  <form>
+    <textarea cols="100" rows="10" id="Textbereich">
+Planötscher Pascal	Zuvor beigetreten	5.11.2020, 09:01:33
+Batinic Ena	Zuvor beigetreten	5.11.2020, 09:01:33
+Batinic Ena	Verlassen	5.11.2020, 09:01:40
+Batinic Ena	Beigetreten	5.11.2020, 09:03:15
+Batinic Ena	Verlassen	5.11.2020, 09:03:19
+Batinic Ena	Beigetreten	5.11.2020, 09:06:25
+Popov Sladan	Beigetreten	5.11.2020, 09:01:36
+Zorn Matteo	Beigetreten	5.11.2020, 09:02:20
+Marko Zora	Beigetreten	5.11.2020, 09:02:24
+Petrovic' David	Beigetreten	5.11.2020, 09:02:28
+Neider Nicole	Beigetreten	5.11.2020, 09:02:35
+Schoch Fabian	Beigetreten	5.11.2020, 09:02:49
+Reiter Gilbert Stefan	Beigetreten	5.11.2020, 09:03:08
+Reiter Gilbert Stefan	Verlassen	5.11.2020, 09:03:46
+Reiter Gilbert Stefan	Beigetreten	5.11.2020, 09:05:29
+Begic Iris	Beigetreten	5.11.2020, 09:04:12
+Darwish Fatma	Beigetreten	5.11.2020, 09:07:39
+Darwish Fatma	Verlassen	5.11.2020, 09:08:28
+Darwish Fatma	Beigetreten	5.11.2020, 09:08:37
+Eberl Maximilian	Beigetreten	5.11.2020, 09:12:24
+    </textarea>
+    <input type="button"
+	   id="rechne"
+	   onclick="alert(bobo());"
+	   value="Los!">
+  
+  </form> 
+
+</body>
+
+</html>
