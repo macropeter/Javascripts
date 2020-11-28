@@ -6,17 +6,26 @@
   <script>
     function bobo()
     {
-	var tst = document.getElementById("Textbereich").value;
-	var atst= tst.split('\n');
+	let tst = document.getElementById("Textbereich").value;
+	let atst= tst.split('\n');
 	atst.forEach((item,index,arr)=>arr[index]=item.split('\t')[0]);
 	return atst.filter((item,index)=>atst.indexOf(item)===index).sort();
     }
 
+    function schreibeListe(liste)
+    {
+	let tst = document.getElementById("Textbereich");
+	tst.value="";
+	liste.forEach((item)=>tst.value+=item+'\n');
+    }
+	
+	
+
   </script>
 </head>
 
-<body>
-  <h1>Zeichen zählen</h1>
+<body> 
+  <h1>Teams-Log reduzieren</h1>
 
   
   <form>
@@ -44,7 +53,7 @@ Eberl Maximilian	Beigetreten	5.11.2020, 09:12:24
     </textarea>
     <input type="button"
 	   id="rechne"
-	   onclick="alert(bobo());"
+	   onclick="schreibeListe(bobo());"
 	   value="Los!">
   
   </form> 
@@ -52,3 +61,4 @@ Eberl Maximilian	Beigetreten	5.11.2020, 09:12:24
 </body>
 
 </html>
+
