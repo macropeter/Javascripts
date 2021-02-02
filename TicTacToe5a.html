@@ -1,0 +1,90 @@
+<html>
+
+<style>
+  .btn {width:100px;
+	height:100px;
+	font-size:80px;
+	font-family:'Kristen ITC';
+	margin:0;
+       }
+  body {
+      background-color:darkgrey;
+  }
+  section {
+      width:50%;
+      margin-top:5%;
+      margin-left:auto;
+      margin-right:auto;
+      background-color:lightgray;
+  }
+	section>p {
+	    text-align:center;
+	    line-height:1;
+	}
+</style>
+
+
+<head>
+  <h1>Tic-Tac-Toe</h1>
+  <section>
+  <script>
+    var runde=0;
+    function schreibe(event)
+    {
+	//abwechselnd O oder X
+
+	let z='O';
+	if (runde % 2!=0)
+	{
+	    z='X';
+	}
+	
+	// Quelle identifizieren:
+
+	let source=event.target;
+	let caption=source.getAttribute("value"); //Feststellen ob der Button schon beschriftet ist
+	
+	if (caption=="")  //wenn nicht: hineinschreiben
+	{
+	    source.setAttribute("value",z);
+	    runde=runde+1;
+	}
+	else  //wenn doch: Fehler melden
+	{
+	    alert("Kann nicht geklickt werden");
+	}
+
+	//"Game over" falls fertig
+
+	if (runde>8)
+	{
+	    alert("Game over");
+	    return;
+	}
+    }
+	
+	</script>
+
+</head>
+
+<body>
+
+  <script>
+    for (let i=1;i<=9;i++)
+    {
+	if (i%3==1) document.write('<p>');
+
+	document.write('<input');
+	document.write(' class="btn"');
+	document.write(' type="button"');
+	document.write(' onclick="schreibe(event)"');
+	document.write(' value="" />');
+	
+	if (i%3==0) document.write('</p>');
+    }
+</script>
+</section>
+
+</body>
+
+</html>
