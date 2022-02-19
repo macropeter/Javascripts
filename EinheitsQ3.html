@@ -15,6 +15,7 @@
 </head>
 <body>
   <h1>EinheitsQuadrat</h1>
+  <p>Visualisierung einer Vierfeldertafel als Einheitsquadrat</p>
 
 
   <h2>Vierfeldertafel</h2>
@@ -68,44 +69,49 @@
     zeilenSum.push(data[1][0]+data[1][1]);
 
 
-    //Rechteck1:
-    var rechteck1={
+    //Rechteck11:
+    var rechteck11={
 	breite: spaltenSum[0],
 	laenge: data[0][0],
 	farbe: "red",
 	zeichne: function(Leinwand,AnfangX,AnfangY){
 	    Leinwand.fillStyle=this.farbe;
-	    Leinwand.fillRect(AnfangX,AnfangY,this.breite,this.laenge);
+	    let faktorx=groesse/(spaltenSum[0]+spaltenSum[1]);
+	    let faktory=groesse/(spaltenSum[0]);
+	    Leinwand.fillRect(AnfangX*faktorx,
+			      AnfangY*faktory,
+			      this.breite*faktorx,
+			      this.laenge*faktory);
 	}
     }
 
-    //Rechteck2:
-    var rechteck2=Object.create(rechteck1);
-    rechteck2.laenge=data[1][0];
-    rechteck2.breite=spaltenSum[0];
-    rechteck2.farbe="blue";
+    //Rechteck12:
+    var rechteck12=Object.create(rechteck11);
+    rechteck12.laenge=data[1][0];
+    rechteck12.breite=spaltenSum[0];
+    rechteck12.farbe="blue";
 
-    //Rechteck3:
-    var rechteck3=Object.create(rechteck1);
-    rechteck3.laenge=data[0][1];
-    rechteck3.breite=spaltenSum[1];
-    rechteck3.farbe="green";
+    //Rechteck21:
+    var rechteck21=Object.create(rechteck11);
+    rechteck21.laenge=data[0][1];
+    rechteck21.breite=spaltenSum[1];
+    rechteck21.farbe="green";
 
-    //Rechteck4:
-    var rechteck4=Object.create(rechteck1);
-    rechteck4.laenge=data[1][1];
-    rechteck4.breite=spaltenSum[1];
-    rechteck4.farbe="yellow";
+    //Rechteck22:
+    var rechteck22=Object.create(rechteck11);
+    rechteck22.laenge=data[1][1];
+    rechteck22.breite=spaltenSum[1];
+    rechteck22.farbe="yellow";
 
 
     //Rechtecke zeichnen:
-    rechteck1.zeichne(GO,0,0);
+    rechteck11.zeichne(GO,0,0);
 
-    rechteck2.zeichne(GO,0,rechteck1.laenge);
+    rechteck12.zeichne(GO,0,rechteck11.laenge);
 
-    rechteck3.zeichne(GO,rechteck1.breite,0);
+    rechteck21.zeichne(GO,rechteck11.breite,0);
 
-    rechteck4.zeichne(GO,rechteck1.breite,rechteck3.laenge)
+    rechteck22.zeichne(GO,rechteck11.breite,rechteck21.laenge)
 
 
 
