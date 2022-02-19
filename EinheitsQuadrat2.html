@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>EinheitsQuadrat</title>
+
+    <style>
+      table,td,tr {border:1px solid black;
+	     border-collapse:collapse;}
+    </style>
+    
+</head>
+<body>
+  <h1>EinheitsQuadrat</h1>
+
+  
+  <h2>Vierfeldertafel</h2>
+  <table>
+    <tr>
+      <td id="a11"></td>
+      <td id="a12"></td>
+    </tr>
+    <tr>
+      <td id="a21"></td>
+      <td id="a22"></td>
+    </tr>
+  </table>
+
+  <h2>Visualisierung</h2>
+  <canvas width="500"
+	  height="500"
+	  id="Leinwand"/>
+
+
+  <script>
+    const ctx=document.getElementById("Leinwand");
+    const GO=ctx.getContext("2d");
+
+    const groesse=500;
+
+
+    const data=[[34,11],
+		[5,5]];
+
+    document.getElementById("a11").innerHTML=data[0][0];
+    document.getElementById("a12").innerHTML=data[0][1];
+    document.getElementById("a21").innerHTML=data[1][0];
+    document.getElementById("a22").innerHTML=data[1][1];
+    
+    
+    
+    GO.fillStyle="rgb(235, 235, 224)";
+    GO.fillRect(0,0,500,500);
+
+    var summe=
+	data[0][0]+
+	data[0][1]+
+	data[1][0]+
+	data[1][1];
+
+    var spaltenSum=new Array();
+    spaltenSum[0]=data[0][0]+data[1][0];
+    spaltenSum[1]=(data[0][1]+data[1][1]);
+
+    var reihenSum=[];
+    reihenSum[0]=(data[0][0]+data[0][1]);
+    reihenSum[1]=(data[1][0]+data[1][1]);
+
+   
+    //Rechteck1:
+    var rechteck1={
+	breite: spaltenSum[0],
+	laenge: data[0][0],
+	farbe: "red"
+    }
+
+    //Rechteck2:
+    var rechteck2=Object.create(rechteck1);
+    rechteck2.laenge=data[1][0];
+    rechteck2.breite=spaltenSum[0];
+    rechteck2.farbe="blue";
+
+    //Rechteck3:
+    var rechteck3=Object.create(rechteck1);
+    rechteck3.laenge=data[0][1];
+    rechteck3.breite=spaltenSum[1];
+    rechteck3.farbe="green";
+
+    //Rechteck4:
+    var rechteck4=Object.create(rechteck1);
+    rechteck4.laenge=data[1][1];
+    rechteck4.breite=spaltenSum[1];
+    rechteck4.farbe="yellow";
+
+
+    //Rechtecke zeichnen:
+    let startx,starty,b,l;
+
+    //Rechteck1:
+    GO.fillStyle=rechteck1.farbe;
+    startx=0;
+    starty=0;
+    b=rechteck1.breite;
+    l=rechteck1.laenge;
+    GO.fillRect(startx,starty,b,l);
+
+    //Rechteck2:
+    GO.fillStyle=rechteck2.farbe;
+    startx=0;
+    starty=l;
+    b=rechteck2.breite;
+    l=rechteck2.laenge;
+    GO.fillRect(startx,starty,b,l);
+
+   
+    //Rechteck3:
+    GO.fillStyle=rechteck3.farbe;
+    startx=rechteck1.breite;
+    starty=0;
+    b=rechteck3.breite;
+    l=rechteck3.laenge;
+    GO.fillRect(startx,starty,b,l);
+
+
+    //Rechteck4:
+    GO.fillStyle=rechteck4.farbe;
+    startx=rechteck1.breite;
+    starty=rechteck3.laenge;
+    b=rechteck4.breite;
+    l=rechteck4.laenge;
+    GO.fillRect(startx,starty,b,l);
+
+    
+   
+    
+  </script>
+    
+</body>
+</html>
