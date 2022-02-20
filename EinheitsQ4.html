@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EinheitsQuadrat</title>
+
+    <style>
+      table,td,tr {border:1px solid black;
+	     border-collapse:collapse;}
+    </style>
+
+    <script>
+      const groesse=500;
+      var data=new Array();
+
+      
+
+    //Rechteck11:
+    var rechteck11={
+	breite: spaltenSum[0],
+	laenge: data[0][0],
+	farbe: "red",
+	zeichne: function(Leinwand,AnfangX,AnfangY)
+	{
+	    Leinwand.fillStyle=this.farbe;
+	    let faktorx=groesse/(spaltenSum[0]+spaltenSum[1]);
+	    let faktory=groesse/Math.max(spaltenSum[1],spaltenSum[0]);
+	    Leinwand.fillRect(AnfangX*faktorx,
+			      AnfangY*faktory,
+			      this.breite*faktorx,
+			      this.laenge*faktory);
+	}
+    }
+
+    //Rechteck12:
+    var rechteck12=Object.create(rechteck11);
+    rechteck12.laenge=data[1][0];
+    rechteck12.breite=spaltenSum[0];
+    rechteck12.farbe="blue";
+
+    //Rechteck21:
+    var rechteck21=Object.create(rechteck11);
+    rechteck21.laenge=data[0][1];
+    rechteck21.breite=spaltenSum[1];
+    rechteck21.farbe="green";
+
+    //Rechteck22:
+    var rechteck22=Object.create(rechteck11);
+    rechteck22.laenge=data[1][1];
+    rechteck22.breite=spaltenSum[1];
+    rechteck22.farbe="yellow";
+
+      
+      function transferdata()
+      {
+	  data[0][0]=Number(document.getElementById("a11").value);
+	  data[0][1]=Number(document.getElementById("a12").value);
+	  data[1][0]=Number(document.getElementById("a21").value);
+	  data[1][1]=Number(document.getElementById("a22").value);
+	  var summe=
+	    data[0][0]+data[0][1]+
+	    data[1][0]+data[1][1];
+
+	  var spaltenSum=new Array();
+	    spaltenSum.push(data[0][0]+data[1][0]);
+	    spaltenSum.push(data[0][1]+data[1][1]);
+
+	  var zeilenSum=new Array();
+	    zeilenSum.push(data[0][0]+data[0][1]);
+	    zeilenSum.push(data[1][0]+data[1][1]);
+
+
+      }
+
+      
+    </script>
+
+</head>
+<body>
+  <h1>EinheitsQuadrat</h1>
+  <p>Visualisierung einer Vierfeldertafel als Einheitsquadrat</p>
+
+
+  <h2>Vierfeldertafel</h2>
+  <table>
+    <tr>
+      <td><input type="text" id="a11"/>
+      </td>
+      <td><input type="test" id="a12"/>
+      </td>
+    </tr>
+    <tr>
+      <td><input type="text" id="a21"/>
+      </td>
+      <td><input type="text" id="a22"/>
+      </td>
+    </tr>
+  </table>
+  <input type="button" onclick="transferdata()"/>
+
+  <h2>Visualisierung</h2>
+  <canvas width="500"
+	  height="500"
+	  id="Leinwand"/>
+
+
+  <script>
+    const ctx=document.getElementById("Leinwand");
+    const GO=ctx.getContext("2d");
+
+
+    GO.fillStyle="rgb(235, 235, 224)";
+    GO.fillRect(0,0,500,500);
+
+    
+    //Rechtecke zeichnen:
+    rechteck11.zeichne(GO,0,0);
+    rechteck12.zeichne(GO,0,rechteck11.laenge);
+    rechteck21.zeichne(GO,rechteck11.breite,0);
+    rechteck22.zeichne(GO,rechteck11.breite,rechteck21.laenge)
+
+  </script>
+
+</body>
+</html>
