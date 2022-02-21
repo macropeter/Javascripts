@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simples Snake Programm</title>
+    <script>
+        //Startpunkt:
+        var x=270;
+        var y=429;
+        //Richtungsvektor:
+        var vx=0;
+        var vy=-5;
+        function kastl()
+        {
+            //kl Rechteck schwarz übermalen:
+            GO.fillStyle="black";
+            GO.fillRect(x,y,20,20);
+            //neue Koordinaten berechnen:
+            x=x+vx;
+            y=y+vy;
+            if (x>=795)
+            {
+                x=0;
+            }
+
+            if (x<0)
+            {
+                x=794;
+            }
+            if (y>=795)
+            {
+                y=0;
+            }
+            if (y<0)
+            {
+                y=794;
+            }
+
+            //neu zeichnen:
+            GO.fillStyle="red";
+            GO.fillRect(x,y,20,20);
+        }
+
+        function Tuwas(e)
+        {
+            let keynum = e.keyCode;
+            alert("Du hast Taste " +(keynum)+" gedrückt!")
+
+        }
+    </script>
+</head>
+<body onkeypress="Tuwas(event)">
+    <canvas height="800" width="800" id="MyCanvas"></canvas>
+
+    <script>
+        const Grafikelement=document.getElementById("MyCanvas");
+        const GO=Grafikelement.getContext("2d");
+
+        GO.fillStyle="black";
+        GO.fillRect(0,0,800,800);
+
+        setInterval(kastl,100);
+
+        
+    </script>
+</body>
+</html>
