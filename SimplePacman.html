@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Simples Snake Programm</title>
     <script>
+     
         //Startpunkt:
         var x=270;
         var y=429;
@@ -43,16 +44,42 @@
             GO.fillRect(x,y,20,20);
         }
 
-        function Tuwas(e)
-        {
-            let keynum = e.keyCode;
-            alert("Du hast Taste " +(keynum)+" gedrückt!")
+        function pfeil(evt)
+      {
+	  evt=evt;// || window.event;
 
+	  let keynum=evt.keyCode;
+	  //alert(keynum);
+	 
+	    switch(keynum)
+	    {
+		case 40:
+		vx=0;
+		vy=4;
+		break;//unten
+		case 37:
+		vx=-4;
+		vy=0;
+		break;//links
+		case 38:
+		vx=0;
+		vy=-4;
+		break;//oben
+		case 39:
+		vx=4;
+		vy=0;
+		break;//rechts
+		default:
+		alert("Weiß nicht");
+	    }
         }
     </script>
 </head>
-<body onkeypress="Tuwas(event)">
-    <canvas height="800" width="800" id="MyCanvas"></canvas>
+<body onkeydown="pfeil(event)">
+  <canvas height="800"
+	  width="800"
+	  id="MyCanvas">
+  </canvas>
 
     <script>
         const Grafikelement=document.getElementById("MyCanvas");
