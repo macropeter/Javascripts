@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+    <style>
+        body {background-color: aqua;}
+    </style>
+
+    <script>
+    function xorit()
+        {
+            //Text aus dem Klartextfeld abholen:
+            let Klartext=document.getElementById("Klartext").value;
+	    let faktor=parseInt(document.getElementById("Faktor").value);
+	    
+
+	    //Schleife
+	    ergebnis="";
+	    for (let i=0;i<Klartext.length;i++)
+	    {
+		let asciinr=Klartext.charCodeAt(i);
+		asciinr=asciinr ^ faktor;  // ^ = xor
+		
+		ergebnis=ergebnis+String.fromCharCode(asciinr);
+
+	    //Ausgabe: 
+		document.getElementById("Chiffretext").value=ergebnis;
+	    }
+        }
+    
+    </script>
+</head>
+<body>
+    <h1>Cäsarverschlüsselung</h1>
+    <h2>Monoalphabetische Substitution</h2>
+    
+    <p>Klartext: 
+    <input type="text" name="Klartext" id="Klartext">
+
+    Verschiebefaktor:
+    <input type="text"
+    name="Faktor"
+    id="Faktor"
+    width="20"
+    value="13"></p>
+
+
+    <input type="button"
+    value="Verschlüssle!"
+    onclick="xorit()"
+    >
+
+    <p>
+        Chiffretext:
+        <input type="text"
+        name="Chiffretext"
+        id="Chiffretext">
+    </p>
+</body>
+</html>

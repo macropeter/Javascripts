@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    
+</head>
+<body>
+    <canvas width="800" 
+            height="800" 
+            id="Zeichenblatt"></canvas>
+    
+<script>
+    const Grafikelement=document.getElementById("Zeichenblatt");
+    const GO=Grafikelement.getContext("2d");
+    //GO="Grafikobjekt"
+    GO.fillRect(0,0,800,800); //ganze Zeichenfläche
+    var r=100;
+
+    function tuwas()
+    {
+    GO.beginPath();
+    GO.arc(400,400,r,0,6.48);
+    GO.fillStyle="purple";
+    GO.fill();
+    //GO.stroke();
+    r=r+5;
+    if (r>400) r=r-5;
+    }
+
+  //Zeitschleife=Animation
+    setInterval(tuwas,50);
+
+
+</script>
+</body>
+</html>
