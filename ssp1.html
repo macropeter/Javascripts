@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Schere-Stein-Papier</title>
+    <script>
+      //Version mit Symbolen
+
+      const Schere=Symbol("Schere");
+      const Stein=Symbol("Stein");
+      const Papier=Symbol("Papier");
+
+      const SchereSteinPapier=[Schere,Stein,Papier];
+
+      var meinsatz,ceinsatz;
+      
+            
+      function spiel(einsatz1,einsatz2)
+      {
+	  if (einsatz1==einsatz2)
+	      return "Unentschieden";
+	  else if ((einsatz1==Stein&&einsatz2==Papier)||
+		   (einsatz1==Papier&&einsatz2==Schere)||
+		   (einsatz1==Schere&&einsatz2==Stein))
+	      return "Computer gewinnt";
+	  else return "Spieler gewinnt";
+      }
+
+      function los()
+      {
+	  ceinsatz=SchereSteinPapier[Math.floor(Math.random()*3)];
+	  console.log(ceinsatz);
+	  alert("Computer spielt "+ceinsatz.toString()+": "+spiel(meinsatz,ceinsatz));
+      }
+
+    </script>
+</head>
+<body>
+<h1>Schere-Stein-Papier</h1>
+<p>
+  <input type="Button"
+	 value="Schere"
+	 onclick="meinsatz=Schere">
+  <input type="Button"
+	 value="Stein"
+	 onclick="meinsatz=Stein">
+  <input type="Button"
+	 value="Papier"
+	 onclick="meinsatz=Papier">
+</p>
+
+<p>
+  <input type="Button"
+	 value="Spiele!"
+	 onclick="los()">
+</p>
+
+</body>
+</html>
