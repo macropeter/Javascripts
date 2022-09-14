@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Schere - Stein - Papier</title>
+
+    <style>
+        p#Antwort {font-size:500%;}
+    </style>
+
+    <script>
+    const wahl=["Schere", "Stein", "Papier"];
+    var mwahl,cwahl; //mwahl:meine Wahl; cwahl: Computerwahl; globale Variablen
+
+    function spiel() {
+        var erg; //Ergebnis: 
+
+        cwahl=Math.floor(Math.random()*3);
+        document.getElementById("Antwort").value="Computer wählt: "+cwahl;
+        
+        if (mwahl==cwahl) erg="unentschieden";
+        else if ((mwahl==0 && cwahl==1) 
+                 ||(mwahl==1 && cwahl==2)
+                 ||(mwahl==2 && cwahl==0))
+                 erg="Computer gewinnt!";
+        else erg="Mensch gewinnt!";
+        
+
+        document.getElementById("mwahl").innerHTML="Wahl des Spielers: "+wahl[mwahl];
+        document.getElementById("cwahl").innerHTML="Wahl des Computers: "+wahl[cwahl];
+        document.getElementById("Antwort").innerHTML=erg;
+        
+        ;
+    }
+    </script>
+</head>
+<body>
+    <h1>Schere - Stein - Papier</h1>
+    <p><input type="button" 
+           value="Schere"
+           onclick="mwahl=0;spiel()">
+    <input type="button" 
+           value="Stein"
+           onclick="mwahl=1;spiel()">
+    <input type="button" 
+           value="Papier"
+           onclick="mwahl=2;spiel()"></p>
+    
+    <p id="cwahl"></p>
+    <p id="mwahl"></p>
+    <p id="Antwort"></p>
+</body>
+</html>
