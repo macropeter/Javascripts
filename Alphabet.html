@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alphabet</title>
+
+    <style>
+        p#Ausgabe {text-align: center;
+                    font-size: 500%;}
+    </style>
+
+    <script>
+        //globale Variable:
+        var n;
+        var temps;
+        const alphabet=['A','B','C','D','F'];
+        
+        function Stopp()
+        {
+            clearInterval(temps);
+        }
+       
+        function Start()
+        {
+            n=0;
+            temps=setInterval(ablauf,200);
+        }
+
+        function ablauf()
+        {
+            if (n>4) 
+            {
+                n=0;
+            }
+            else
+            {
+                document.getElementById("Ausgabe").innerHTML=alphabet[n];
+                n++;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <p>Alphabet zum Anhalten für Stadt-Land-Fluss:
+    <input type="button"
+        id="button"
+        value="Start!"
+        onclick="Start()"/>
+
+    <input type="button"
+        id="Stopp"
+        value="Stopp!"
+        onclick="Stopp()"/>
+    </p>
+
+    <p id="Ausgabe"></p> <!-- für die Anzeige der Ergebnisse mit innerHTML -->
+</body>
+</html>
