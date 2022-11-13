@@ -1,0 +1,68 @@
+<html>
+<head>
+
+<style>
+table {border:1px solid black;}
+</style>
+
+<script type="text/javascript">
+
+var txt='0'; //Globale Variable: gilt für alle
+
+var schreib=function(x){
+	if (txt=='0') txt=x; //wenn 0, dann überschreiben
+	else txt=txt+x; //wenn nicht 0, anhängen
+	document.getElementById("anzeige").value=txt;
+}
+
+function loesche(){ 
+	txt='0';
+	document.getElementById("anzeige").value=txt;
+	}
+
+function rechne(){
+	txt=eval(txt); //Eingabe berechnen
+	document.getElementById("anzeige").value=txt;  
+}
+</script>
+
+</head>
+
+<body>
+
+<input type="text" id="anzeige" value="0"/>
+<table>
+
+<tr>
+<td><button id="b7" onclick="schreib('7')">7</button></td>
+<td><button id="b8" onclick="schreib('8')">8</button></td>
+<td><button id="b9" onclick="schreib('9')">9</button></td>
+</tr>
+
+<tr>
+<td><button id="b4" onclick="schreib('4')">4</button></td>
+<td><button id="b5" onclick="schreib('5')">5</button></td>
+<td><button id="b6" onclick="schreib('6')">6</button></td>
+</tr>
+
+<tr>
+<td><button id="b2" onclick="schreib('1')">1</button></td>
+<td><button id="b3" onclick="schreib('2')">2</button></td>
+<td><button id="b4" onclick="schreib('3')">3</button></td>
+</tr>
+
+<tr>
+<td><button id="b0" onclick="schreib('0')">0</button></td>
+<td><button id="bplus" onclick="schreib('+')">+</button></td>
+<td><button id="bClear" onclick="loesche()">C</button></td>
+</tr>
+
+<tr>
+<td colspan="3"><button id="rechne" onclick="rechne()">Berechne</button></td>
+</tr>
+
+</table>
+
+
+</body>
+</html>
