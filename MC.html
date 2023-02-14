@@ -12,10 +12,12 @@
 
 <canvas id="myCanvas" width="628" height="500"></canvas>
   
-<script language="javascript" type="text/javascript">
- 'use strict';
+<script>
+
   const breite=628;
   const hoehe=500;
+  const anzahl=10000;
+
   
   const c = document.getElementById("myCanvas");
   const ctx = c.getContext("2d");
@@ -23,22 +25,22 @@
   let n=0;
   
   
-  for (let i=1;i<=10000;i++)
-		   {
-		   x=Math.random()*Math.pi/2;
-		   y=Math.random();
-		   if (y<Math.sin(x))
-				 {
-				 ctx.fillStyle="#FF0000";
-				 n++;
-				 }
-				 else
-				 {
-				 ctx.fillStyle="#00FF00";
-				 }
-		ctx.fillRect(x*breite,y*hoehe,2,2);
-		   }
-console.log(n/10000*4);
+  for (let i=1;i<=anzahl;i++)
+  {
+      x=Math.random()*Math.PI/2;
+      y=Math.random();
+      if (y<Math.sin(x))
+      {
+	  ctx.fillStyle="#FF0000";
+	  n++;
+      }
+      else
+      {
+	  ctx.fillStyle="#00FF00";
+      }
+      ctx.fillRect(x*400,hoehe-y*hoehe,2,2);
+  }
+  console.log("Anteil der Treffer: "+n/anzahl);
   
 </script>
 
