@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandelbrotmenge</title>
+
+
+ 
+</head>
+<body>
+    <canvas
+        id="Leinwand"
+        width="600"
+        height="400">
+    </canvas>
+
+    <script>
+        const clw = document.getElementById("Leinwand");
+        const ctx = clw.getContext("2d");
+
+
+        function cmake(re,im)
+        {
+            return {Re: re,
+		    Im: im};
+        }
+
+      function cplus(z1,z2)
+      {
+	  return {Re:(z1.Re+z2.Re),
+		  Im:(z1.Im+z2.Im)};
+      }
+
+      function cbetrag(z1)
+      {
+	  return Math.sqrt(z1.Re*z1.Re+z1.Im*z1.Im);
+      }
+
+      function cmult(z1,z2)
+      {
+	  return {Re: (z1.Re*z2.Re-z1.Im*z2.Im),
+		  Im: (z1.Re*z2.Im+z1.Im*z2.Re)}
+      }
+
+    function citer(c)
+    {
+        let help={Re:0.0,Im:0.0};
+        for (let i=1;i<200;i++)
+        {
+            help=cplus(cmult(help,help),c);
+            //console.log(help);
+            if (cbetrag(help)>2) return true;
+        }
+        return false;
+    }
+
+    function zeichnemandelbrot()
+    {
+        let dx,dy;
+        for (dx=0;dx<600;dx=dx+1)
+            for (dy=0;dy<400;dy=dy+1)
+                {
+                    if (citer(cmake((dx-400)/200,(dy-200)/200)))
+                    ctx.fillStyle="white";
+                    else
+                    ctx.fillStyle="black";
+                    ctx.fillRect(dx,dy,1,1);
+                }
+    }
+
+    zeichnemandelbrot();
+
+    </script>
+
+</body>
+</html>
