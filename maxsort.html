@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaxSort</title>
+</head>
+<body>
+    <script>
+        var arr=[]; //Arrayvariable deklarieren
+
+        for (let i=0;i<10;i++)
+        {
+            arr.push(parseInt(Math.random()*100));
+        }
+
+        function maxi(x,n)
+        {
+            var max=0;
+            for (let i=1;i<=n;i++)
+            {
+                if (x[i]>x[max])
+                    max=i;
+            }
+            return max;
+        }
+
+        function MaxSort(x)
+        {
+            for (let j=9;j>0;j--)
+            {
+                let maxindex=maxi(x,j);
+                // jetzt tauschen:
+                let help=x[maxindex];
+                x[maxindex]=x[j];
+                x[j]=help;
+            }
+            return x;
+        }
+    </script>
+</body>
+</html>
