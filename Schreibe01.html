@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-Eingabe</title>
+
+<script>
+    function schreibe0()
+    {
+        document.getElementById("Text").value += "0";
+    }
+
+    function schreibe1()
+    {
+        document.getElementById("Text").value+="1";
+    }
+
+    function loesche()
+    {
+        document.getElementById("Text").value = "";
+    }
+</script>
+
+</head>
+<body>
+    <input type="text"
+    name=""
+    id="Text">
+
+    <input type="button" value="0" onclick="schreibe0()">
+
+    <input type="button"
+    value="1"
+    onclick="schreibe1()">
+
+    <input type="button"
+    value="Clear"
+    onclick="loesche()">
+    
+</body>
+</html>
