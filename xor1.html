@@ -15,45 +15,45 @@
     function xorit()
         {
             //Text aus dem Klartextfeld abholen:
-            let Klartext=document.getElementById("Klartext").value;
-	    let faktor=parseInt(document.getElementById("Faktor").value);
+        let Klartext=document.getElementById("Klartext").value;
+	    let Passtext=document.getElementById("Passtext").value;
 	    
 
 	    //Schleife
-	    ergebnis="";
+	    let ergebnis="";
+        let asciinr;
+        let passnr;
+        let ergnr;
+
 	    for (let i=0;i<Klartext.length;i++)
 	    {
-		let asciinr=Klartext.charCodeAt(i);
-		asciinr=asciinr ^ faktor;  // ^ = xor
-		
-		ergebnis=ergebnis+String.fromCharCode(asciinr);
+		asciinr=Klartext.charCodeAt(i);
+        passnr=Passtext.charCodeAt(i);
 
+		ergnr=asciinr ^ passnr;  // ^ = xor
+		
+		ergebnis=ergebnis+String.fromCharCode(ergnr);
+        }
 	    //Ausgabe: 
 		document.getElementById("Chiffretext").value=ergebnis;
-	    }
+	    
         }
     
     </script>
 </head>
 <body>
-    <h1>Cäsarverschlüsselung</h1>
-    <h2>Monoalphabetische Substitution</h2>
+    <h1>XOR-Verschlüsselung</h1>
     
     <p>Klartext: 
-    <input type="text" name="Klartext" id="Klartext">
+    <input type="text" id="Klartext"/>
 
-    Verschiebefaktor:
-    <input type="text"
-    name="Faktor"
-    id="Faktor"
-    width="20"
-    value="13"></p>
+    Passtext:
+    <input type="Text" id="Passtext"/></p>
 
 
     <input type="button"
     value="Verschlüssle!"
-    onclick="xorit()"
-    >
+    onclick="xorit()"/>
 
     <p>
         Chiffretext:
