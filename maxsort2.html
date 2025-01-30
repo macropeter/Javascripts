@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //const arr=[4,6,1,7,9,3,2,10,19,-3];  //Array festlegen
+
+        var arr=[];
+        for (i=0;i<1000;i++)
+        {
+            arr.push(Math.floor(1000*Math.random()+1));
+        }
+
+        function msort(x){
+        const len=x.length;
+        let imax=0; //größtes Element
+        for (let j=len-1;j>=0;j--)
+        {
+            let imax=0;
+            for (let i=1;i<=j;i++)
+            {
+                
+                if (x[imax]<x[i]) imax=i;
+            }
+            let help=x[j];
+            x[j]=x[imax];
+            x[imax]=help;
+        }
+        return x;  //function liefert zurück!
+        }
+
+        console.log(msort(arr));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

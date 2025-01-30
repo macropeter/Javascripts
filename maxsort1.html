@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var x=[5,9,1,3,7,2,4];
+        var len=x.length;
+
+
+        for (let j=0;j<len;j++)
+    {
+        let vmax=x[0];
+        let imax=0;
+        //das max suchen (und die Stelle merken)
+        for (var i=0;i<len-j;i++)
+        {
+            if (x[i]>vmax) 
+            {
+                vmax=x[i];
+                imax=i;
+            }
+        }
+        //tauschen:
+        let help=x[imax];
+        x[imax]=x[len-1];
+        x[len-1]=help;
+    }
+    console.log(x);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
