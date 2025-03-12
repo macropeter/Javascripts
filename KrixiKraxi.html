@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<canvas id="MyCanvas" width="800" height="800"></canvas>
+    <script>
+        const Grafikelement=document.getElementById("MyCanvas");
+        const Go=Grafikelement.getContext("2d");
+
+        for (let i=1;i<1000;i++)
+        {
+            Go.lineTo(Math.random()*800,Math.random()*800);
+        }
+        Go.stroke();
+    </script>
+    
+</body>
+</html>
