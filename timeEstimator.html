@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+      var anfang=0;
+      var ende=0;;
+      var zeit=0.0;
+
+      var ergs=[];
+
+      function init()
+      {
+	  document.getElementById("Ausgabe").value="";
+      }
+      
+      function StarteZeit()
+      {
+	  anfang=Date.now();	  
+      }
+
+      function StoppeZeit()
+      {
+	  ende=Date.now();
+	  return ende-anfang;
+      }
+
+      function ZeitMessen()
+      {
+	  let erg=5-StoppeZeit()/1000;
+	  document.getElementById("Ausgabe").value=erg;
+	  ergs.push(erg);
+	  if (ergs.length>=3)
+	      document
+	      .getElementById("Wertung")
+	      .innerHTML="Deine beste Wertung ist "+Math.min(...ergs);
+      }
+    </script>
+
+<body onload="init()">
+
+  <h1>Schätze, wie lang 10 Sekunden sind!</h1>
+<p id="Txt">Versuche durch Klicken auf Start und Stopp die Zeit von 10sec möglichst genau zu treffen. Der Computer wird dir die Abweichung ausgeben. Du hast drei Versuche, der beste wird gewertet.</p>
+<input type="button"
+       id="Start"
+       value="Start"
+       onclick="StarteZeit()">
+
+<input type="button"
+       id="Ende"
+       value="Ende"
+       onclick="ZeitMessen()">
+
+<input type="text"
+       id="Ausgabe">
+
+<p id="Wertung"></p>
+</body>
+</html>
