@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+   <canvas width="800"
+            height="1000"
+            id="MyCanvas">
+   </canvas>
+
+   <script>
+
+     const Grafikelement = document
+	  .getElementById('MyCanvas');
+     const Go =Grafikelement
+	   .getContext("2d");
+
+     
+     var x=0;
+     var y=400;
+     Go.moveTo(x,y);
+     Go.lineTo(1000,400);
+     Go.moveTo(x,y);
+
+     for (let i=0;i<200;i++)
+     {
+	 if (Math.random()<0.5)
+	     y=y-5;
+	 else y=y+5;
+
+	 x=x+5;
+	 Go.lineTo(x,y);
+     }
+
+     Go.stroke();
+   </script>
+   
+</body>
+</html>
