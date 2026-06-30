@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+	  content="width=device-width, initial-scale=1.0">
+    <title>Moorhuhn</title>
+
+    <style>
+      #MyCanvas {cursor:crosshair;}
+    </style>
+   
+</head>
+<body>
+  <h1>Moorhuhn jagen</h1>
+  
+  <canvas width="800"
+	  height="800"
+	  onclick="starte(event)"
+	  id="MyCanvas">
+  </canvas>
+
+  <script>
+    const zeichne=document.getElementById("MyCanvas");
+    const Go=zeichne.getContext("2d");
+
+    //Korrektur vom Rand des Fensters berechnen:
+    const rect = zeichne.getBoundingClientRect();
+    //console.log(rect.left,rect.top);
+    let xcorr=rect.left;
+    let ycorr=rect.top;
+
+    var mytimer;
+    var xposition,yposition;
+
+    const bild1=new Image();
+    bild1.src="Bilder/Ball1.png";
+    const bild2=new Image();
+    bild2.src="Bilder/Ball2.png";
+    const bild3=new Image();
+    bild3.src="Bilder/Ball3.png";
+    const bild4=new Image();
+    bild4.src="Bilder/Ball4.png";
+    const bild5=new Image();
+    bild5.src="Bilder/Ball5.png";
+         
+    let counter=1;
+
+    function platzen()
+    {
+	if (counter==1)
+	    Go.drawImage(bild1,xposition,yposition);
+	else if (counter==2)
+	    Go.drawImage(bild2,xposition,yposition);
+	else if (counter==3)
+	    Go.drawImage(bild3,xposition,yposition);
+	else if (counter==4)
+	    Go.drawImage(bild4,xposition,yposition);
+	else if (counter==5)
+	     Go.drawImage(bild5,xposition,yposition);
+
+	counter++;
+	if (counter>=6)
+	{
+	    clearInterval(mytimer);
+	    Go.clearRect(0,0,800,800);
+	}
+	
+    }
+
+    function starte(event)
+    {
+
+	//Mauskoordinaten holen
+	let x=event.clientX;
+	let y=event.clientY;
+	//console.log(xposition,yposition,mytimer);	
+
+	if (x>xposition+xcorr
+	    && x<xposition+150+xcorr
+	    && y>yposition+ycorr
+	    && y<yposition+150+ycorr)
+	mytimer=setInterval(platzen,50);
+    }
+
+    function Spielloop()
+    {
+	Go.clearRect(0,0,800,800);
+
+	xposition=parseInt(Math.random()*650);
+	yposition=parseInt(Math.random()*650);
+	Go.drawImage(bild1,xposition,yposition);
+    }
+
+    const spieltimer=setInterval(Spielloop,2000);
+      
+    </script>
+</body>
+</html>
